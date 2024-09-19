@@ -1,0 +1,46 @@
+{
+  "editor.formatOnPaste": true,
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit",
+    "source.fixAll.format": "explicit",
+    "source.sortImports": "never",
+    "source.organizeImports": "explicit"
+  },
+  "git.autofetch": true,
+  "eslint.format.enable": true,
+  "javascript.format.enable": false,
+  "typescript.format.enable": false,
+  "todohighlight.keywords": [
+    { "text": "TODO", "backgroundColor": "lightBlue" },
+    { "text": "NOTE", "backgroundColor": "lightGrey" },
+    { "text": "CHECKME", "backgroundColor": "lightBlue" },
+    { "text": "DOCME", "backgroundColor": "lightGreen" },
+    { "text": "TESTME", "backgroundColor": "pink" },
+    { "text": "PENDING", "backgroundColor": "lightYellow" }
+  ],
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[scss]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "cSpell.words": ["MACBOOK", "tailwindcss"],
+  "scss.lint.unknownAtRules": "ignore"
+}

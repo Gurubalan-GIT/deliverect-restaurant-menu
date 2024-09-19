@@ -20,6 +20,7 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+// SCSS allows nesting, so you can now do this:
 @layer utilities {
   .text-balance {
     text-wrap: balance;

@@ -13,7 +13,15 @@
     "jsx": "preserve",
     "incremental": true,
     "paths": {
-      "@/*": ["./*"]
+      "@components/*": ["./common/components/*"],
+      "@context/*": ["./context/*"],
+      "@types/*": ["./common/types/*"],
+      "@interfaces/*": ["./common/interfaces/*"],
+      "@helpers/*": ["./common/component-helpers/*"],
+      "@utils/*": ["./common/utils/*"],
+      "@layouts/*": ["./layouts/*"],
+      "@modules/*": ["./modules/*"],
+      "@styles/*": ["./styles/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
