@@ -1,8 +1,10 @@
 import menuItemFallbackImage from "@assets/images/fallback-menu-item.webp";
-import useStore from "@zustand/store";
+import { isEqual } from "@utils/helpers";
+import useStore from "@zustand/menuStore";
 import classNames from "classnames";
 import Image from "next/image";
-import { IMenuItem } from "./interfaces";
+import { useMemo } from "react";
+import { IMenuItem } from "../interfaces";
 
 type Props = {
   item: IMenuItem;
@@ -10,11 +12,17 @@ type Props = {
 
 const MenuItem: React.FC<Props> = ({ item }) => {
   const { addToBasket, basket } = useStore();
-
-  const basketItem = basket.find((basketItem) => basketItem.id === item.id);
+  const basketItem = basket.find((basketItem) =>
+    isEqual(basketItem.id, item.id)
+  );
   const quantityInBasket = basketItem ? basketItem.quantity : 0;
   const stockAvailability = item.stock?.availability ?? 0;
-  const realizedStockAvailability = stockAvailability - quantityInBasket;
+
+  const realizedStockAvailability = useMemo(
+    () => stockAvailability - quantityInBasket,
+    [stockAvailability, quantityInBasket]
+  );
+
   const isStockAvailable = realizedStockAvailability > 0;
 
   const handleAddToBasket = () => {
@@ -34,13 +42,13 @@ const MenuItem: React.FC<Props> = ({ item }) => {
         <div className="flex-1">
           <h3 className="font-semibold text-lg text-blue-800">
             {quantityInBasket > 0 && `${quantityInBasket} × `}
-            {item.name}
+            {item?.name}
           </h3>
           <p className="text-sm text-gray-600 line-clamp-2 overflow-hidden">
-            {item.description}
+            {item?.description}
           </p>
           <p className="mt-1 text-sm">
-            {item.discount_rate > 0 ? (
+            {item?.discount_rate > 0 ? (
               <>
                 <span className="font-semibold mr-2 text-blue-800">
                   AED{" "}
