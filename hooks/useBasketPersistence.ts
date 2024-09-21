@@ -1,4 +1,4 @@
-import useStore from "@zustand/store";
+import useStore from "@zustand/menuStore";
 import { useEffect } from "react";
 
 const useBasketPersistence = () => {

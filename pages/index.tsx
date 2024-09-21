@@ -1,7 +1,8 @@
+import ErrorBoundary from "@components/ErrorBoundary";
 import { Menu } from "@modules/Menu";
 import { IMenuCategory, IMenuItem } from "@modules/Menu/interfaces";
 import { fetchMenuData } from "@utils/helpers";
-import useStore from "@zustand/store";
+import useStore from "@zustand/menuStore";
 import { GetServerSideProps } from "next";
 import { useEffect } from "react";
 import useBasketPersistence from "../hooks/useBasketPersistence";
@@ -23,23 +24,36 @@ const HomePage: React.FC<Props> = ({ menuData }) => {
     setMenuItems(menuData.items);
   }, [menuData, setCategories, setMenuItems]);
 
-  return <Menu />;
+  return (
+    <ErrorBoundary>
+      <Menu />
+    </ErrorBoundary>
+  );
 };
 
 export const getServerSideProps: GetServerSideProps = async () => {
-  const menuData = await fetchMenuData();
+  try {
+    const menuData = await fetchMenuData();
 
-  if (!menuData) {
+    if (!menuData) {
+      return {
+        notFound: true,
+      };
+    }
+
     return {
-      notFound: true,
+      props: {
+        menuData,
+      },
+    };
+  } catch (error) {
+    console.error(error);
+    return {
+      props: {
+        error: "Failed to load menu data",
+      },
     };
   }
-
-  return {
-    props: {
-      menuData,
-    },
-  };
 };
 
 export default HomePage;

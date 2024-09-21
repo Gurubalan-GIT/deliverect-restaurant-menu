@@ -41,7 +41,7 @@
   "[css]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "cSpell.words": ["MACBOOK", "tailwindcss", "webp", "zustand"],
+  "cSpell.words": ["deliverect", "MACBOOK", "tailwindcss", "webp", "zustand"],
   "scss.lint.unknownAtRules": "ignore",
   "[svg]": {
     "editor.defaultFormatter": "jock.svg"
