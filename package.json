@@ -15,10 +15,13 @@
     "test-all": "yarn lint && yarn check-format && yarn check-lint && yarn check-types && yarn build --debug"
   },
   "dependencies": {
+    "@svgr/webpack": "^8.1.0",
+    "classnames": "^2.5.1",
     "next": "14.2.12",
     "react": "^18",
     "react-dom": "^18",
-    "sass": "^1.79.1"
+    "sass": "^1.79.1",
+    "zustand": "^5.0.0-rc.2"
   },
   "devDependencies": {
     "@types/node": "^20",

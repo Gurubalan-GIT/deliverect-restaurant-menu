@@ -14,12 +14,9 @@
     "incremental": true,
     "paths": {
       "@components/*": ["./common/components/*"],
-      "@context/*": ["./context/*"],
-      "@types/*": ["./common/types/*"],
-      "@interfaces/*": ["./common/interfaces/*"],
-      "@helpers/*": ["./common/component-helpers/*"],
+      "@assets/*": ["./assets/*"],
+      "@zustand/*": ["./zustand/*"],
       "@utils/*": ["./common/utils/*"],
-      "@layouts/*": ["./layouts/*"],
       "@modules/*": ["./modules/*"],
       "@styles/*": ["./styles/*"]
     }
