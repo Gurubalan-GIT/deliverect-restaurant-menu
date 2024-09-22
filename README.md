@@ -28,9 +28,9 @@ A dynamic single-page application to display and manage a restaurant's menu with
   yarn build && yarn start
   ```
 
-- To lint and format the codebase:
+- To lint and test the codebase with linters:
   ```
-  yarn lint
+  yarn test-all
   ```
 
 ## Hosted Application
@@ -62,7 +62,14 @@ Here's an overview of how the interface works:
 - **Zustand Store**: Simple yet powerful state management for handling basket and menu state.
 - **Tailwind CSS**: Utility-first CSS framework used for quickly styling components.
 
-### Key Features
+## Codebase Quality Control
+
+- Pre-commit hooks via Husky.
+  - This uses prettier and eslint configs together to setup linting when commiting.
+- Github linters for automated commit annotations via [Github actions](./.github/workflows/linter.yml).
+  - This runs a linter action based on the prettier and eslint configs in the respective PR and lints the PR for a status check.
+
+## Key Features
 
 - **Filtering and Search**: Users can search for menu items by name and description. An empty state with an illustration is shown if no results are found.
 - **Stock Tracking**: The app ensures users cannot add more items to their basket than are available in stock. Out-of-stock items are marked and disabled.
