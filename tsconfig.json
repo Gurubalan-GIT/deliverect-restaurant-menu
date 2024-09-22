@@ -19,7 +19,8 @@
       "@zustand/*": ["./zustand/*"],
       "@utils/*": ["./common/utils/*"],
       "@modules/*": ["./modules/*"],
-      "@styles/*": ["./styles/*"]
+      "@styles/*": ["./styles/*"],
+      "@mocks/*": ["./mocks/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],

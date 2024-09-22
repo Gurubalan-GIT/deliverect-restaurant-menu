@@ -21,6 +21,14 @@ yarn check-types ||
     false;
 )
 
+echo 'Running Unit Tests coverage'
+
+yarn test:coverage ||
+(
+    echo '❌ Unit Tests Failed. View the errors above to see why.'
+    false;
+)
+
 echo 'Trying to build now.'
 
 yarn build ||

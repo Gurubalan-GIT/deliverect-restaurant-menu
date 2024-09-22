@@ -1,5 +1,3 @@
-/** @type {import('ts-jest').JestConfigWithTsJest} */
-
 module.exports = {
   preset: "ts-jest",
   testEnvironment: "jest-environment-jsdom",
@@ -8,11 +6,16 @@ module.exports = {
     "^@components/(.*)$": "<rootDir>/common/components/$1",
     "^@utils/(.*)$": "<rootDir>/common/utils/$1",
     "^@zustand/(.*)$": "<rootDir>/zustand/$1",
-    "^@assets/(.*)$": "<rootDir>/public/assets/$1",
+    "^@assets/(.*)$": "<rootDir>/assets/$1",
+    "^@mocks/(.*)$": "<rootDir>/mocks/$1",
+    "\\.(css|less|sass|scss|png|jpg|webp|svg|ttf|woff|woff2)$":
+      "jest-transform-stub",
   },
-  setupFilesAfterEnv: ["<rootDir>/jest.setup.ts"],
+  setupFilesAfterEnv: ["<rootDir>/jest.setup.tsx"],
   transform: {
-    ".(ts|tsx)": "ts-jest",
+    ".+\\.(css|less|sass|scss|png|jpg|webp|svg|ttf|woff|woff2)$":
+      "jest-transform-stub",
+    "^.+\\.(ts|tsx)$": "ts-jest",
   },
   testMatch: ["**/__tests__/**/*.ts?(x)", "**/?(*.)+(test).ts?(x)"],
   transformIgnorePatterns: ["/node_modules/"],
