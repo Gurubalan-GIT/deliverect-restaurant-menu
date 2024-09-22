@@ -1,4 +1,4 @@
-name: Lint
+name: Tests Coverage
 
 on:
   push:
@@ -7,8 +7,8 @@ on:
     branches: main
 
 jobs:
-  run-linters:
-    name: Run linters
+  run-tests:
+    name: Run Tests
     runs-on: ubuntu-latest
 
     steps:
@@ -23,10 +23,5 @@ jobs:
       - name: Install Node.js dependencies
         run: yarn install --frozen-lockfile
 
-      - name: Run linters
-        uses: wearerequired/lint-action@v2
-        with:
-          eslint: true
-          eslint_args: "-c $GITHUB_WORKSPACE/.eslintrc.json"
-          eslint_extensions: "ts,tsx"
-          prettier: true
+      - name: Run tests
+        run: yarn test:ci
