@@ -12,9 +12,8 @@ type Props = {
 
 const MenuItem: React.FC<Props> = ({ item }) => {
   const { addToBasket, basket } = useStore();
-  const basketItem = basket.find((basketItem) =>
-    isEqual(basketItem.id, item.id)
-  );
+  const basketItem =
+    basket.find((basketItem) => isEqual(basketItem.id, item.id)) || null;
   const quantityInBasket = basketItem ? basketItem.quantity : 0;
   const stockAvailability = item.stock?.availability ?? 0;
 
@@ -81,7 +80,6 @@ const MenuItem: React.FC<Props> = ({ item }) => {
             width={80}
             height={80}
             className="rounded-md"
-            objectFit="contain"
           />
         </div>
       </div>
