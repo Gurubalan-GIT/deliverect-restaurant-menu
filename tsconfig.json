@@ -1,14 +1,7 @@
 {
   "compilerOptions": {
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
-    "types": [
-      "jest",
-      "node"
-    ],
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "types": ["jest", "node"],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
@@ -18,38 +11,18 @@
     "moduleResolution": "bundler",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "jsx": "preserve",
+    "jsx": "react-jsx",
     "incremental": true,
     "paths": {
-      "@components/*": [
-        "./common/components/*"
-      ],
-      "@assets/*": [
-        "./assets/*"
-      ],
-      "@zustand/*": [
-        "./zustand/*"
-      ],
-      "@utils/*": [
-        "./common/utils/*"
-      ],
-      "@modules/*": [
-        "./modules/*"
-      ],
-      "@styles/*": [
-        "./styles/*"
-      ],
-      "@mocks/*": [
-        "./mocks/*"
-      ]
+      "@components/*": ["./common/components/*"],
+      "@assets/*": ["./assets/*"],
+      "@zustand/*": ["./zustand/*"],
+      "@utils/*": ["./common/utils/*"],
+      "@modules/*": ["./modules/*"],
+      "@styles/*": ["./styles/*"],
+      "@mocks/*": ["./mocks/*"]
     }
   },
-  "include": [
-    "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx"
-  ],
-  "exclude": [
-    "node_modules"
-  ]
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "exclude": ["node_modules"]
 }
