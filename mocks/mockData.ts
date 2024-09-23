@@ -65,7 +65,7 @@ export const mockCategories: IMenuCategory[] = [
   },
   {
     id: "2",
-    name: "Main courses ",
+    name: "Main courses",
     url: "main-courses",
   },
 ];
