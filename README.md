@@ -66,8 +66,10 @@ Here's an overview of how the interface works:
 
 - Pre-commit hooks via Husky.
   - This uses prettier and eslint configs together to setup linting when commiting.
-- Github linters for automated commit annotations via [Github actions](./.github/workflows/linter.yml).
-  - This runs a linter action based on the prettier and eslint configs in the respective PR and lints the PR for a status check.
+- Linting and testing are automated with [Linter Workflow File](./.github/workflows/linter.yml) and [Tests Coverage Workflow File](./.github/workflows/test.yml).
+  - **Linting**: A linter action runs on each pull request, ensuring code adheres to the Prettier and ESLint configurations before being merged.
+  - **Testing**: Automated tests are triggered on each pull request using `jest` to run unit tests and ensure all components and functionality are covered.
+  - These checks are integrated as status checks for pull requests to ensure that only well-linted and tested code is merged.
 
 ## Key Features
 
