@@ -33,6 +33,13 @@ A dynamic single-page application to display and manage a restaurant's menu with
   yarn test-all
   ```
 
+## Environment Setup
+
+- Create an `.env` file in the root of the project, with the content :
+  ```
+    NEXT_PUBLIC_CHATFOOD_CDN_URL = your-api-domain-name
+  ```
+
 ## Hosted Application
 
 The application is hosted live [here](https://deliverect-restaurant-menu.vercel.app).
