@@ -37,7 +37,7 @@ A dynamic single-page application to display and manage a restaurant's menu with
 
 - Create an `.env` file in the root of the project, with the content :
   ```
-    NEXT_PUBLIC_CHATFOOD_CDN_URL = your-api-domain-name
+    NEXT_PUBLIC_CHATFOOD_CDN_URL=your-api-domain-name
   ```
 
 ## Hosted Application
