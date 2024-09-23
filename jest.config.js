@@ -1,6 +1,7 @@
 module.exports = {
   preset: "ts-jest",
   testEnvironment: "jest-environment-jsdom",
+  modulePaths: ["<rootDir>"],
   moduleNameMapper: {
     "^@modules/(.*)$": "<rootDir>/modules/$1",
     "^@components/(.*)$": "<rootDir>/common/components/$1",
